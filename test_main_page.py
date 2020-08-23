@@ -1,4 +1,4 @@
-from .pages.main_page import MainPage  #  from pages.main_page import MainPage
+from pages.main_page import MainPage  # from pages.main_page import MainPage
 import pytest
 from selenium import webdriver
 #  from pages.base_page import BasePage
