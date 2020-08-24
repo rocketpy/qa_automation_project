@@ -1,3 +1,6 @@
+# from selenium.common.exceptions import имя_исключения
+
+
 class BasePage:
     
     def __init__(self, browser, url, timeout=10):
