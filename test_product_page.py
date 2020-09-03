@@ -19,10 +19,14 @@ def test_guest_can_add_product_to_basket(browser):
     login_page = LoginPage(browser, browser.current_url)
     login_page.should_be_login_page()
     
-"""
 def test_guest_should_see_login_link(browser):
     link = "http://selenium1py.pythonanywhere.com/"
     page = MainPage(browser, link)
     page.open()
     page.should_be_login_link()
-"""
+
+def test_guest_cant_see_success_message(self, browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+    product_page = ProductPage(browser, link)
+    product_page.open()
+    product_page.should_not_be_success_message()
