@@ -73,5 +73,11 @@ def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
     page2.is_basket_empty()
     page2.should_be_basket_empty_message()
     
-
-    
+@pytest.mark.need_review
+def test_guest_can_add_product_to_basket(browser):
+    link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+    product_page = ProductPage(browser, link)
+    product_page.open()
+    product_page.add_to_basket()
+    product_page.should_be_book_name()
+    product_page.should_be_book_price()
