@@ -95,3 +95,10 @@ class TestUserAddToBasketFromProductPage():
         self.login_page.register_new_user(email, password)
         self.login_page.should_be_authorized_user()
         
+    def test_user_cant_see_success_message(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+        self.product_page = ProductPage(browser, link)
+        self.product_page.open()
+        self.product_page.should_not_be_success_message()
+        
+    
