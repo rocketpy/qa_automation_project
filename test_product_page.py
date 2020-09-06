@@ -101,4 +101,13 @@ class TestUserAddToBasketFromProductPage():
         self.product_page.open()
         self.product_page.should_not_be_success_message()
         
-    
+    @pytest.mark.need_review
+    def test_user_can_add_product_to_basket(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+        self.product_page = ProductPage(browser, link)
+        self.product_page.open()
+        self.product_page.add_to_basket()
+        #product_page.solve_quiz_and_get_code()
+        #time.sleep(120)
+        self.product_page.should_be_book_name()
+        self.product_page.should_be_book_price()
