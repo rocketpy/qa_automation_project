@@ -81,3 +81,17 @@ def test_guest_can_add_product_to_basket(browser):
     product_page.add_to_basket()
     product_page.should_be_book_name()
     product_page.should_be_book_price()
+
+    
+class TestUserAddToBasketFromProductPage():
+    @pytest.fixture(scope="function", autouse=True)
+    def setup(self, browser):
+        link = "http://selenium1py.pythonanywhere.com/en-gb/accounts/login/"
+        self.login_page = LoginPage(browser, link)
+        self.login_page.open()
+        count = random.randint(1, 100)
+        email = str(time.time()) + "@fakemail.org"
+        password = str(time.time() + count)
+        self.login_page.register_new_user(email, password)
+        self.login_page.should_be_authorized_user()
+        
