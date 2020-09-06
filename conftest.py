@@ -1,6 +1,6 @@
 import pytest
 from selenium import webdriver
-https://www.leapforceathome.com/
+from selenium.webdriver.chrome.options import Options
 
 
 @pytest.fixture(scope="function")
@@ -11,12 +11,10 @@ def browser():
     print("\nquit browser..")
     browser.quit()
     
-    
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default="chrome",
                      help="Choose browser: chrome or firefox")
     parser.addoption('--language', action='store', default="en")
-    
     
 @pytest.fixture(scope="function")
 def browser(request):
