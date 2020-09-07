@@ -31,3 +31,9 @@ class BasePage:
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         link.click()
         assert "login" in self.browser.current_url, "Link is invalid"
+
+    def should_enter_basket(self):
+        basket = self.browser.find_element(*BasePageLocators.BASKET_BUTTON)
+        basket.click()
+        assert "basket" in self.browser.current_url, "Basket unavailable"
+        
