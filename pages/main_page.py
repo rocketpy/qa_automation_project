@@ -18,4 +18,10 @@ class MainPage(BasePage):
         link = self.browser.find_element_by_css_selector("#login_link")
         link.click()
         alert = self.browser.switch_to.alert
-        alert.accept()
+        alert.accept()\
+        
+"""        
+class MainPage(BasePage):
+    def __init__(self, *args, **kwargs):
+        super(MainPage, self).__init__(*args, **kwargs)
+"""
