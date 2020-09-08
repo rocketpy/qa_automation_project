@@ -1,4 +1,6 @@
 import math
+import time
+import random
 import pytest
 from pages.main_page import MainPage
 from pages.base_page import BasePage
@@ -111,3 +113,4 @@ class TestUserAddToBasketFromProductPage():
         #time.sleep(120)
         self.product_page.should_be_book_name()
         self.product_page.should_be_book_price()
+
