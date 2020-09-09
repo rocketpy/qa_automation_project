@@ -10,9 +10,9 @@ from pages.product_page import ProductPage
 from selenium import webdriver
 
 
-# pytest -s test_foo.py
+# pytest -s test_main_page.py
 # pytest -v --tb=line test_main_page.py
-
+"""
 def test_guest_can_add_product_to_basket(browser):
     link = "http://selenium1py.pythonanywhere.com"
     page = MainPage(browser, link)
@@ -26,6 +26,7 @@ def test_guest_should_see_login_link(browser):
     page = MainPage(browser, link)
     page.open()
     page.should_be_login_link()
+"""
 
 def test_guest_cant_see_success_message(self, browser):
     link = "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
