@@ -1,9 +1,8 @@
-from pages.main_page import MainPage
-from pages.base_page import BasePage
-from pages.login_page import LoginPage
-from pages.basket_page import BasketPage
 import pytest
 from selenium import webdriver
+from pages.main_page import MainPage
+from pages.login_page import LoginPage
+from pages.basket_page import BasketPage
 
 
 # pytest -v --tb=line test_main_page.py
