@@ -3,14 +3,16 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 
-@pytest.fixture(scope="function")
+#  pytest -s -v test_file_name.py
+
+@pytest.fixture(scope="function")  #  in case,  scope="session" , this fixture will run once by test
 def browser():
     print("\nstart browser for test..")
     browser = webdriver.Chrome()
     yield browser
     print("\nquit browser..")
     browser.quit()
-    
+
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default="chrome",
                      help="Choose browser: chrome or firefox")
@@ -34,9 +36,6 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit() 
-    
-
-#  pytest -s -v test_file_name.py
 
 @pytest.mark.parametrize('language', ["ru", "en-gb"])
 def test_guest_should_see_login_link(browser, language):
