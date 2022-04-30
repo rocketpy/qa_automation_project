@@ -1,5 +1,7 @@
-from locust import HttpLocust, TaskSet, task
+# Origin taked from here:  https://habr.com/ru/company/infopulse/blog/430810/
+
 import random as rnd
+from locust import HttpLocust, TaskSet, task
 
 
 class UserBehavior(TaskSet):
